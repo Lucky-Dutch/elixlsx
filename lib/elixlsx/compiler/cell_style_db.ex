@@ -4,7 +4,7 @@ defmodule Elixlsx.Compiler.CellStyleDB do
   alias Elixlsx.Compiler.FillDB
   alias Elixlsx.Compiler.NumFmtDB
   alias Elixlsx.Compiler.BorderStyleDB
-  alias Elixlsx.Compiler.WorkbookCompInfo
+  # alias Elixlsx.Compiler.WorkbookCompInfo
   alias Elixlsx.Compiler.DBUtil
 
   defstruct cellstyles: %{}, element_count: 0
