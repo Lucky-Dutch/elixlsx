@@ -4,7 +4,7 @@ defmodule Elixlsx.Compiler.CellStyleDB do
   alias Elixlsx.Compiler.FillDB
   alias Elixlsx.Compiler.NumFmtDB
   alias Elixlsx.Compiler.BorderStyleDB
-  alias Elixlsx.Compiler.WorkbookCompInfo
+  # alias Elixlsx.Compiler.WorkbookCompInfo
   alias Elixlsx.Compiler.DBUtil
 
   defstruct cellstyles: %{}, element_count: 0
@@ -48,7 +48,7 @@ defmodule Elixlsx.Compiler.CellStyleDB do
   border* and fill* properties (*=TBD)
   in the WorkbookCompInfo structure.
   """
-  @spec register_all(WorkbookCompInfo.t()) :: WorkbookCompInfo.t()
+  # @spec register_all(WorkbookCompInfo.t()) :: WorkbookCompInfo.t()
   def register_all(wci) do
     Enum.reduce(wci.cellstyledb.cellstyles, wci, fn {style, _}, wci ->
       wci
