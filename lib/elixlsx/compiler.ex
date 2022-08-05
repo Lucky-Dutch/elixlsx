@@ -27,7 +27,7 @@ defmodule Elixlsx.Compiler do
     {Enum.reverse(sheetCompInfos), nextrID}
   end
 
-@doc """
+ @doc ~S"""
   Accepts a list of Sheets and the next free relationship ID.
   Returns a tuple containing a list of DrawingCompInfo's based on the images
   within the sheets and the next free relationship ID.
