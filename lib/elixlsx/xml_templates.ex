@@ -522,15 +522,15 @@ defmodule Elixlsx.XMLTemplates do
     <xdr:twoCellAnchor editAs="#{image.positioning}">
         <xdr:from>
             <xdr:col>#{image.colidx}</xdr:col>
-            <xdr:colOff>#{image.x_from_offset}</xdr:colOff>
+            <xdr:colOff>#{image.x_offset}</xdr:colOff>
             <xdr:row>#{image.rowidx}</xdr:row>
-            <xdr:rowOff>#{image.y_from_offset}</xdr:rowOff>
+            <xdr:rowOff>#{image.x_offset}</xdr:rowOff>
         </xdr:from>
         <xdr:to>
-            <xdr:col>#{image.colidx}</xdr:col>
-            <xdr:colOff>#{image.x_to_offset}</xdr:colOff>
-            <xdr:row>#{image.rowidx}</xdr:row>
-            <xdr:rowOff>#{image.y_to_offset}</xdr:rowOff>
+            <xdr:col>#{image.colidx + image.width}</xdr:col>
+            <xdr:colOff>#{image.x_offset}</xdr:colOff>
+            <xdr:row>#{image.rowidx + image.height}</xdr:row>
+            <xdr:rowOff>#{image.x_offset}</xdr:rowOff>
         </xdr:to>
         <xdr:pic>
             <xdr:nvPicPr>
@@ -561,6 +561,7 @@ defmodule Elixlsx.XMLTemplates do
     </xdr:twoCellAnchor>
     """
   end
+
 
   def xl_drawing_rel_sheet_rows(images, wci) do
     Enum.map_join(images, fn image ->
